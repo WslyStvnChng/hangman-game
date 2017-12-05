@@ -4,34 +4,52 @@
 <head>
   <title>Hangman Game</title>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   <!-- Reset CSS -->
   <link rel="stylesheet" href="./assets/css/reset.css">
+  <!-- BootStrap Linksheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
   <!-- Style CSS -->
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-
 <body>
 
-  <div class="top-header" id="header_tag">
-    <h2>Hangman Game</h2>
-    <h3>Johnny needs your help! He's trying to figure out which fish to buy for his girlfriend. </h3>
+  <!-- Jumbotron -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Hangman</h1>
+      <p class="lead"><strong>Rules are simple:</strong>
+        <br>
+       Computer generates a word from the theme and you, as the user will guess it by suggesting letters, within a certain number of guesses. Sounds simple enough, right?
+      </p>
+    </div>
   </div>
 
-  <section class="wrapper">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="page-header">
-            <h3>Your Word</h3>
-          </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 display-3" id="hidden-word">
+        <p>_ _ _ _ _ _ _</p>
       </div>
     </div>
-  </section>
-
-
-
-
+  </div>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" id="right-guess">
+        <p>Right Guess</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" id="wrong-guess">
+        <p>Wrong Guess</p>
+      </div>
+    </div>
+  </div>
 
 
 
