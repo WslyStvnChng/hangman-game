@@ -1,7 +1,33 @@
-div.jumbotron {
-  background-image:url(./images/fishing.jpg);
+body {
+  background-color: #b7d0ff;
+  /* opacity: 0.6; */
 }
 
+/* Jumbotron */
+.jumbotron {
+  background-image: url(../images/fishing.jpg);
+  background-size: cover;
+  opacity: 0.6;
+  max-height: 275px;
+}
+ 
 h1 {
-  color: red;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 4px 2px red;
+}
+
+/* Paragraph on Jumbotron*/
+.lead {
+  color: black;
+  font-weight: bold;
+  text-shadow: 2px 2px gray;
+}
+
+/* Hypothesis aka the Guesses and Missing Word/Phrase */
+#missing-word {
+  text-align: center
+}
+.hypothesis {
+  text-align: center;
 }
