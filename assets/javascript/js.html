@@ -10,15 +10,25 @@
   var underScores = [];
   var randomWord;
 
-  // Generate a number with the length of the word
-    var wordBank = wordBank[Math.floor(Math.random() * wordBank.length)];
-      console.log(wordBank.length);
+  // Generate random word
+    var randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
+      console.log(randomWord);
 
   //For loop 
     for (var i = 0; i < wordBank.length; i++) {
     console.log(wordBank[i]);
   }
 
+
+//   //Logs user's key's when pressed 
+// document.onkeyup = function(event) {
+//   userGuesses = event.key;
+//   console.log(userGuesses);
+
+//   if(userGuesses === randomWord) {
+//     console.log('yes');
+//   }
+// }
   
           
 
