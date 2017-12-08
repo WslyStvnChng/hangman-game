@@ -10,32 +10,14 @@
   var underScores = [];
   var randomWord;
 
-  // Generate random word
+// Generate random word
     var randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
       console.log(randomWord);
 
-  //For loop 
+//For loop 
     for (var i = 0; i < wordBank.length; i++) {
-    console.log(wordBank[i]);
-  }
-
-
-//   //Logs user's key's when pressed 
-// document.onkeyup = function(event) {
-//   userGuesses = event.key;
-//   console.log(userGuesses);
-
-//   if(userGuesses === randomWord) {
-//     console.log('yes');
-//   }
-// }
-  
-          
-
-  
-            //   
-      //   document.getElementById('missing-word').innerHTML = underScores;
-      // 
+      console.log(wordBank[i]);
+    
 
 
 
@@ -45,4 +27,8 @@
 
 
 
-</script>
+// // Array of words // Use currentPuzzle and loop through the characters to build out new var lettersAndBlanks // When a user
+// makes a guess, follow the process above... if the user's guess letter is in the currentPuzzle (currentWord, maybe) then you
+// can replace that character or character(s) in the lettersAndBlanks // User keeps guessing // Game ends either when user runs
+// out of guesses/lives, or when currentPuzzle === lettersAndBlanks // Update the win/loss count, clear out the puzzle, and
+// reset the game so user can play again
