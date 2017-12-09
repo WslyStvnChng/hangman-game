@@ -1,73 +1,59 @@
 //Global Event Handler to load event of a Window
 window.onload = function() {
-
-// Global Variables
-  var wordBank = ["trout", 'salmon', 'walleye', 'saugeye', 'bluegill', 'bass', 'crappie', 'sunfish', 'catfish'];
+  // Global Variables
+  var wordBank = [
+    "trout",
+    "salmon",
+    "walleye",
+    "saugeye",
+    "bluegill",
+    "bass",
+    "crappie",
+    "sunfish",
+    "catfish"
+  ];
   var wins = 0; //Starts game with 0 points
   var loss = 0; //Ends when user losses
   var wrongLetter = [];
   var guessLeft = 10;
   var userGuesses = []; //User Guesses
   var underScores = []; //Pushes the Underscores
-  var randomWord = wordBank;
-  
+  // var selectedWord = new Array(randomWord);
 
-// Generate random word
+  // Generate random word from words selected
   randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-  console.log(randomWord);  //Words are randomly created in console
+  // console.log(randomWord);
 
-//Select word to a variable
+  // Create new variable that takes the randomWord selected and breaks into a array
 
-  for(var i = 0; i < randomWord.length; i++) {
+  randomWordSplit = Array.from(randomWord);
+  console.log(randomWordSplit);
+
+  //Select word to a variable for blanks
+  for (var i = 0; i < randomWord.length; i++) {
     // console.log(wordBank[i]);
-    underScores.push('_');
+    underScores.push("_");
   }
 
-//Print underScores to screen
-  document.getElementById('missing-word').textContent = underScores.join(" ");
-  
-//Print number of guesses on html
-  // document.getElementById('guess-left').textContent = guessLeft;
+  //Print underScores to screen
+  document.getElementById("missing-word").textContent = underScores.join(" ");
 
-} // Global variables and random word generated throughout the game
+  //Now we grab a function in the event of user's guess
+  document.onkeyup = function(event) {
+    var keyPressed = event.key;
 
-//Get user's guesses is right 
-  // document.addEventListener('keypress', function (e){
-  //   console.log(event);
-  // }
+    for (var i = 0; i < randomWord.length; i++) {
+      console.log(randomWord[i]);
+    }
 
-// Use a loop the selectedWord and see if the letter exisit in there. If it does, replace the relevent letterBlanks spaces with correct letters
+    if (keyPressed == randomWord[i]) {
+      console.log(randomWord[i]);
+    } else {
+    }
 
-// for (var i = 0; i < 
-  
-  
-
- 
-
-
-
-//  if(randomWord.indexOf(userGuesses[i]) > -1) {
-//     //   console.log(randomWord.indexOf(userGuesses));
-//       for(var i = 0; i < randomWord.length; i++) {
-//       }
-//       console.log(randomWord);
-//       if(randomWord[i] === userGuesses) {
-//       console.log(underScores);
-//         underScores[i] = userGuesses;
-//         console.log(underScores);
-//       }
-      
-//     }
-//     else {
-//       wrongLetter.push(userGuesses);
-//       console.log(wrongLetter);
-//     }
-
-//   }
-// Captures keyboard input. Depending on the letter pressed it will "call" (execute) different functions.
-//   document.onkeyup = function () {
-//   userGuesses = event.key();
-// }
-
-
-    
+    //Next steps:
+    //create a function pass in the randomWord variable; associate a character in randomWord with each dash up to the length of the dash
+    //compare selected word to underscores
+    //Style or attach id from div class = hidden word
+  };
+};
