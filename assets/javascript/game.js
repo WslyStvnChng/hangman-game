@@ -9,26 +9,65 @@ window.onload = function() {
   var guessLeft = 10;
   var userGuesses = []; //User Guesses
   var underScores = []; //Pushes the Underscores
-  var randomWord;
+  var randomWord = wordBank;
   
 
 // Generate random word
-  var randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
+  randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
   console.log(randomWord);  //Words are randomly created in console
 
 //Select word to a variable
 
-  for(var i = 0; i < wordBank.length; i++) {
-    console.log(wordBank[i]);
+  for(var i = 0; i < randomWord.length; i++) {
+    // console.log(wordBank[i]);
     underScores.push('_');
   }
 
-//Grab randomWord to place onto page with ID
-  var randomWord = document.getElementById('missing-word').textContent = randomWord;
+//Print underScores to screen
+  document.getElementById('missing-word').textContent = underScores.join(" ");
+  
+//Print number of guesses on html
+  // document.getElementById('guess-left').textContent = guessLeft;
+
+} // Global variables and random word generated throughout the game
+
+//Get user's guesses is right 
+  // document.addEventListener('keypress', function (e){
+  //   console.log(event);
+  // }
+
+// Use a loop the selectedWord and see if the letter exisit in there. If it does, replace the relevent letterBlanks spaces with correct letters
+
+// for (var i = 0; i < 
+  
   
 
+ 
+
+
+
+//  if(randomWord.indexOf(userGuesses[i]) > -1) {
+//     //   console.log(randomWord.indexOf(userGuesses));
+//       for(var i = 0; i < randomWord.length; i++) {
+//       }
+//       console.log(randomWord);
+//       if(randomWord[i] === userGuesses) {
+//       console.log(underScores);
+//         underScores[i] = userGuesses;
+//         console.log(underScores);
+//       }
+      
+//     }
+//     else {
+//       wrongLetter.push(userGuesses);
+//       console.log(wrongLetter);
+//     }
+
+//   }
 // Captures keyboard input. Depending on the letter pressed it will "call" (execute) different functions.
 //   document.onkeyup = function () {
 //   userGuesses = event.key();
 // }
-}
+
+
+    
