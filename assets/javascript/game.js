@@ -41,8 +41,8 @@ window.onload = function() {
   //Now we grab a function in the event of user's guess
   document.onkeyup = function(e) 
   {
-    var userGuesses = e.key;  //user Guesses on keyboard
-    // console.log(keyPressed);
+    var userGuesses = e.key.toLowerCase();  //user Guesses on keyboard
+    // console.log("user guesses: " + userGuesses);
 
   //Checking if letter exist inside the word
   if(randomWord.indexOf(userGuesses) > -1) 
@@ -52,48 +52,22 @@ window.onload = function() {
       // console.log(randomWordSplit[i]);
 
       //if the randomWordSplit is corrected from user's input on keyboard, that statement is tru
-      if (randomWordSplit[i] === userGuesses) 
-      {
+      if(randomWordSplit[i] === userGuesses) {
         underScores[i] = userGuesses; //underScores is equal to userGuesses
-        console.log(underScores);
+        console.log(underScores); 
       }
     }
-  } //If wrong then push the user's lives decrease
+  }
   else {
     wrongLetter.push(userGuesses);
     guessLeft--;
-    console.log(guessLeft);
+    // console.log(guessLeft);
   }
-
 }
 }
-
-
-
-  //If key is pressed by user it will compare to the new variable of the randomWordSplit and see if it matches with the string within the word
-  //If the selected input is CORRECTED in the randomWordSplit; than it will input it on the ID selected of html  
-    // if (keyPressed == randomWordSplit[i]) {
-    //   // console.log(keyPressed)
-    // } 
-
-
-
-    
-  //IF isn't corrected, it will grab the ID selector from the HTML to show the losses (counter)
-    // } else if {
-
 
   
-
-
-
-
-
-
-
-
-    //Next steps:
-    //create a function pass in the randomWord variable; associate a character in randomWord with each dash up to the length of the dash
-    //compare selected word to underscores
-    //Style or attach id from div class = hidden word
-
+  //Input guesses on DOM
+  //i want to grab the user's guesses input onto the DOM and make sure if the correct letter fills in the gap on the DOM. If not, it will cause the user to lose a life.
+  // userGuesses = document.getElementById("hidden-word").appendChild(userGuesses);
+    // console.log(randomWordSplit[i]);

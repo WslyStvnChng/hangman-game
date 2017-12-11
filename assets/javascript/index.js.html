@@ -1,39 +1,37 @@
-<script type="text/javascript"></script>
+<!DOCTYPE html>
+<html>
 
-  <h1>Make Sure to use Console</h1>
+<head>
+  <title>Hangman Game</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
 
-  //Variables
-  var wordBank = ['trout' ,'salmon', 'walleye', 'saugeye', 'bluegill', 'bass', 'crappie', 'sunfish', 'catfish'];  
-  var wins = 0;
-  var loss = 0;
-  var wrongLetter = [];
-  var guessLeft = 9;
-  var userGuesses = [];
-  var underScores = [];
-  var randomWord;
+<body>
 
-  <!-- // Generate random word
-  function startGame() {
-  var wordBank = wordBank[Math.floor(Math.random()*wordBank.length)];
-  console.log(wordBank.length);
+<div class="container">
+  <div class="wrapper">
+    <h1>Hangman</h1>
+    <p>Computer generates a word from the theme and you, as the user will guess it by suggesting letters, within a certain number
+    of guesses. Sounds simple enough, right? </p>
+  </div>
+</div>
+<div class="box">
+  <p id="hidden-word"></p>
+  <p id="missing-word"></p>
+  <p id="howmanylettersleft">Letters Guesses:</p>
+  <p id="howmanylivesleft">Lives:</p>
+</div>
+  <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
+  <div class="container">
+    <button id="reset">Play again</button>
+  </div>
+</div>
 
-    for(var i = 0; i < wordBank.length; i++) {
-      console.log(wordBank[i]);
-      
-        underScores.push('_');
-    }
-    document.getElementById('missing-word').innerHTML = underScores;
-  }
-   -->
+</body>
 
-
+</html>
 
 
   
-
-
-
-</script>
-</body>
-</html>
-
