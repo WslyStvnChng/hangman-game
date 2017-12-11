@@ -35,37 +35,43 @@ window.onload = function() {
     underScores.push("_");
   } //end for loop
 
-  //Print underScores to screen
-  document.getElementById("missing-word").innerHTML = underScores.join(" ");
-
   //Now we grab a function in the event of user's guess
   document.onkeyup = function(e) 
-  {
+    {
     var userGuesses = e.key.toLowerCase();  //user Guesses on keyboard
     // console.log("user guesses: " + userGuesses);
 
   //Checking if letter exist inside the word
-  if(randomWord.indexOf(userGuesses) > -1) 
+    if(randomWord.indexOf(userGuesses) > -1) 
   {
   //Creating another for loop for new variable that was selected from randomWordSplit iterator    
     for (var i = 0; i < randomWordSplit.length; i++) {
       // console.log(randomWordSplit[i]);
 
       //if the randomWordSplit is corrected from user's input on keyboard, that statement is tru
-      if(randomWordSplit[i] === userGuesses) {
-        underScores[i] = userGuesses; //underScores is equal to userGuesses
-        console.log(underScores); 
+      if (randomWordSplit[i] === userGuesses) { 
+        underScores[i] = userGuesses;
+        var correct = true;
+        // console.log(underScores); //This console log will show the correct letters in the array of random word    
       }
     }
   }
-  else {
-    wrongLetter.push(userGuesses);
-    guessLeft--;
-    // console.log(guessLeft);
+    else {
+      if (guessLeft > 0) {
+        // endgame() 
+        wrongLetter.push(userGuesses);
+        guessLeft--; //Is guesses = guesses -1 
+        // console.log("Guesses left: " + guessLeft);
   }
 }
-}
 
+//DOMS 
+  document.getElementById("missing-word").innerHTML = underScores.join(" ");
+
+
+
+}
+}
   
   //Input guesses on DOM
   //i want to grab the user's guesses input onto the DOM and make sure if the correct letter fills in the gap on the DOM. If not, it will cause the user to lose a life.
