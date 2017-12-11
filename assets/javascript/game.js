@@ -12,9 +12,10 @@ window.onload = function() {
     "sunfish",
     "catfish"
   ];
-  var wins = 0; //Starts game with 0 points
+  var wins = 10; //Starts game with 0 points
   var loss = 0; //Ends when user losses
   var wrongLetter = [];
+  var lives = [];
   var guessLeft = 10;
   var userGuesses = []; //User Guesses
   var underScores = []; //Pushes the Underscores
@@ -63,17 +64,17 @@ window.onload = function() {
         guessLeft--; //Is guesses = guesses -1 
         // console.log("Guesses left: " + guessLeft);
   }
+  else {
+    alert("You bastard, you killed Kenny!!!!")
+  }
 }
 
-//DOMS 
+//DOMS  - got letters to appear on DOM
   document.getElementById("missing-word").innerHTML = underScores.join(" ");
 
+  document.getElementById("howmanylivesleft").innerHTML = guessLeft;
 
-
+  document.getElementById("wrongletters").innerHTML = wrongLetter.join(" ");
 }
 }
   
-  //Input guesses on DOM
-  //i want to grab the user's guesses input onto the DOM and make sure if the correct letter fills in the gap on the DOM. If not, it will cause the user to lose a life.
-  // userGuesses = document.getElementById("hidden-word").appendChild(userGuesses);
-    // console.log(randomWordSplit[i]);
