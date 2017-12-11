@@ -66,6 +66,8 @@ window.onload = function() {
   }
   else {
     alert("You bastard, you killed Kenny!!!!")
+    loss++;
+    document.getElementById()
   }
 }
 
@@ -75,6 +77,8 @@ window.onload = function() {
   document.getElementById("howmanylivesleft").innerHTML = guessLeft;
 
   document.getElementById("wrongletters").innerHTML = wrongLetter.join(" ");
+
+  document.getElementById("gameWinCounter").innerHTML = wins;
 }
 }
   
