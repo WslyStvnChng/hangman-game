@@ -60,12 +60,12 @@ window.onload = function() {
     else {
       if (guessLeft > 0) {
         // endgame() 
-        wrongLetter.push(userGuesses);
+        wrongLetter.push(userGuesses); //If wrong letter, push to the random word[i] and count it as a loss
         guessLeft--; //Is guesses = guesses -1 
         // console.log("Guesses left: " + guessLeft);
   }
   else {
-    alert("You bastard, you killed Kenny!!!!")
+    alert("Please refresh the page to play again. Due to heavy traffic, reset button don't work")
     loss++;
     document.getElementById()
   }
@@ -73,12 +73,11 @@ window.onload = function() {
 
 //DOMS  - got letters to appear on DOM
   document.getElementById("missing-word").innerHTML = underScores.join(" ");
-
+//Show how many lives left on DOM
   document.getElementById("howmanylivesleft").innerHTML = guessLeft;
-
+// Show how many letters wrong on DOM
   document.getElementById("wrongletters").innerHTML = wrongLetter.join(" ");
-
+//Show the wins
   document.getElementById("gameWinCounter").innerHTML = wins;
 }
 }
-  
