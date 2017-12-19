@@ -15,7 +15,7 @@ window.onload = function() {
   var wins = 0; //Starts game with 0 points
   var loss = 0; //Ends when user losses
   var wrongLetter = [];
-  var guessLeft = 10;
+  var guessLeft = 0;
   var userGuesses = []; //User Guesses
   var underScores = []; //Pushes the Underscores
   // var selectedWord = new Array(randomWord);
@@ -49,7 +49,7 @@ window.onload = function() {
       //if the randomWordSplit is corrected from user's input on keyboard, that statement is tru
       if (randomWordSplit[i] === userGuesses) { 
         underScores[i] = userGuesses;
-        var correct = true;
+        // var correct = true;
         // console.log(underScores); //This console log will show the correct letters in the array of random word    
       }
     }
@@ -64,18 +64,21 @@ window.onload = function() {
 
       wins ++
       document.getElementById("wins").innerHTML = wins;
+
+     
     }
   } else {
-      if (guessLeft >= 0) {
+      if (guessLeft === 0 && wrongLetter === 0) {
         wrongLetter.push(userGuesses); //If wrong letter, push to the random word[i] and count it as a loss
         guessLeft--; //Is guesses = guesses -1 
         // console.log("Guesses left: " + guessLeft);
+        console.log(guessLeft);
       }
   }  
   if(guessLeft = 0) {
     alert("Time to replay again")
-    loss++
-    document.getElementById("losses").innerHTML = loss;
+    loss--
+    document.getElementById("losses").innerHTML = loss ++;
   }
 
 //DOMS  - got letters to appear on DOM
