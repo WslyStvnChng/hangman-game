@@ -12,10 +12,9 @@ window.onload = function() {
     "sunfish",
     "catfish"
   ];
-  var wins = 10; //Starts game with 0 points
+  var wins = 0; //Starts game with 0 points
   var loss = 0; //Ends when user losses
   var wrongLetter = [];
-  var lives = [];
   var guessLeft = 10;
   var userGuesses = []; //User Guesses
   var underScores = []; //Pushes the Underscores
@@ -37,14 +36,12 @@ window.onload = function() {
   } //end for loop
 
   //Now we grab a function in the event of user's guess
-  document.onkeyup = function(e) 
-    {
+  document.onkeyup = function(e) {
     var userGuesses = e.key.toLowerCase();  //user Guesses on keyboard
     // console.log("user guesses: " + userGuesses);
 
   //Checking if letter exist inside the word
-    if(randomWord.indexOf(userGuesses) > -1) 
-  {
+    if(randomWord.indexOf(userGuesses) > -1) {
   //Creating another for loop for new variable that was selected from randomWordSplit iterator    
     for (var i = 0; i < randomWordSplit.length; i++) {
       // console.log(randomWordSplit[i]);
@@ -56,28 +53,45 @@ window.onload = function() {
         // console.log(underScores); //This console log will show the correct letters in the array of random word    
       }
     }
-  }
-    else {
-      if (guessLeft > 0) {
-        // endgame() 
+    var randomWordSplitString = randomWordSplit.join(" ")
+    // console.log(randomrandomWord);
+    var underScoresStrings = underScores.join(" ")
+
+    if (randomWordSplitString === underScoresStrings) {
+      setTimeout(function(){
+        alert("You did it, you won the game")
+      },5)
+
+      wins ++
+      document.getElementById("wins").innerHTML = wins;
+    }
+  } else {
+      if (guessLeft >= 0) {
         wrongLetter.push(userGuesses); //If wrong letter, push to the random word[i] and count it as a loss
         guessLeft--; //Is guesses = guesses -1 
         // console.log("Guesses left: " + guessLeft);
+      }
+  }  
+  if(guessLeft = 0) {
+    alert("Time to replay again")
+    loss++
+    document.getElementById("losses").innerHTML = loss;
   }
-  else {
-    alert("Please refresh the page to play again. Due to heavy traffic, reset button don't work")
-    loss++;
-    document.getElementById()
-  }
-}
 
 //DOMS  - got letters to appear on DOM
   document.getElementById("missing-word").innerHTML = underScores.join(" ");
 //Show how many lives left on DOM
-  document.getElementById("howmanylivesleft").innerHTML = guessLeft;
+  document.getElementById("howmanylettersleft").innerHTML = guessLeft;
 // Show how many letters wrong on DOM
-  document.getElementById("wrongletters").innerHTML = wrongLetter.join(" ");
+  document.getElementById("incorrect").innerHTML = wrongLetter.join(" ");
 //Show the wins
-  document.getElementById("gameWinCounter").innerHTML = wins;
+  document.getElementById("wins").innerHTML = wins;
 }
+}
+
+var resetButton = document.getElementById('myForm');
+resetButton.onclick = reloadPage;
+
+function reloadPage() {
+  window.location.reload();
 }

@@ -1,0 +1,16 @@
+ // 1) create an array of potential words var wordBank = ["trout", 'salmon', 'walleye', 'saugeye', 'bluegill', 'bass', 'crappie',
+'sunfish', 'catfish']; // 2) select a random word from the array above // hint -- use Math.floor and Math.random to randomly
+select one randomWord = wordBank[Math.floor(Math.random() * wordBank.length)]; console.log(randomWord); //Words are randomly
+created in console // 3) set the selected word to a variable (like selectedWord) // 4) use the length of the selectedWord
+to create a NEW variable // BUT this new variable will instead be a string of the same length // but with all blanks... //
+so, if your selectedWord is "Kittens", you would want your // lettersAndBlanks string to be "_ _ _ _ _ _ _" // you'll probably
+need to .split both selectedWord and lettersAndBlanks // into arrays // 5) when the user guesses a letter, you loop through
+the selectedWord // and see if the letter exists in there... if it does, you replace the // relevant lettersAndBlanks spaces
+with the correct letters // example --- if user guesses 't' "Kittens" "_ _ t t _ _ _" // try something like this if (selectedWord[i]
+=== letterGuessed) { lettersAndBlanks[i] = letterGuessed; // this is what adds the correctly guessed letters to the lettersAndBlanks
+array } // 6) each time a user guesses an incorrect letter, subtract one from their available guess count // 7) at the end
+of every "round" (so basically, after each time a user guesses and you either subtract // an available guess OR you update
+the lettersAndBlanks array with the correctly-guessed letter) // after the round ends, check to see if the user is out of
+available guesses --- THEN THEY LOSE // OR check to see if selectedWord === lettersAndBlanks --- THEN THEY WIN // OR if neither
+of those is true, then they get another guess // 8) IF they either win or lose, then you'd want to increment the win or loss
+count and reset the whole frigging game
